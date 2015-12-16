@@ -1,4 +1,4 @@
-# Dillinger
+# Web Scraping Lazada top selling items
 
 This file extracts Lazada's Top 110 top sellers in real-time.
 
