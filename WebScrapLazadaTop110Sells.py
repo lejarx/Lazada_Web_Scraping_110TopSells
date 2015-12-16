@@ -13,3 +13,36 @@ Created on Fri Dec 16 08:05:42 2015
 @output     : a tab delimted dataset in txt file of today's 110 top selling items
 """
 
+############################################################
+#
+# Using Python3
+# python3 ./WebScrapLazadaTop110Sells.py
+#
+############################################################
+
+import time
+import io
+from urllib.request import urlopen
+from bs4 import BeautifulSoup
+
+
+############################################################
+#
+# Prepare a tab delimited file to store the data
+#
+############################################################
+
+# date in YYYYMMDD format
+# append date to filename
+filename = 'Lazada_Top_Sellers' + time.strftime('%Y%m%d') + '.txt'
+
+# use io.open() to avoid Unicode
+f = io.open(filename,'w', encoding='utf8')
+
+# write variable names
+f.write('day-ranking'
+	+'\t'+'product-sku'
+	+'\t'+'product-name'
+	+'\t'+'price-normal'
+	+'\t'+'price-discount'
+	+'\t'+'discount'+'\n')
